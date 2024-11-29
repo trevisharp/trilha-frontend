@@ -1,0 +1,21 @@
+@let nextItem = current.currentItem + ' (pressione Enter ou clique em Add para adicionar)';
+@let title = "title" | translate:lang | titlecase;
+@let placeholder = "placeholder" | translate:lang | lowercase;
+
+
+<h1>{{title}}</h1>
+
+<ul>
+  @for (item of items; track item)
+  {
+    <li>{{item}}</li>
+  }
+  @if (current.currentItem !== "")
+  {
+    <li>{{nextItem}}</li>
+  }
+</ul>
+
+<add-item (onSendInput)="addItem($event)" [placeholder]="placeholder" #current/>
+
+<button (click)="alterarLang()">Alterar Lang</button>

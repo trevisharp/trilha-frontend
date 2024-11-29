@@ -1,0 +1,11 @@
+
+@if (inLogin)
+{
+  <app-login (onInfoChanged)="onLoginDataChanged()"></app-login>
+  <button>Logar</button>
+}
+@else
+{
+  <app-register></app-register>
+  <button>Registrar</button>
+}
