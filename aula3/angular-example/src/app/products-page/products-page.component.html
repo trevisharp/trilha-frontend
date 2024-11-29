@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+
+  @for (product of products; track product.id)
+  {
+    <tr>
+      <td>{{product.id}}</td>
+      <td>
+        <a [href]="'/details/' + product.id">
+          {{product.title}}
+        </a>
+      </td>
+      <td>{{product.price}}</td>
+    </tr>
+  }
+</table>
+
+<button (click)="addNew()">Add a new product</button>
+
+<router-outlet></router-outlet>
