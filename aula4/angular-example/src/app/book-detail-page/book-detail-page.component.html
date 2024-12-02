@@ -1,0 +1,57 @@
+@let title = (book | async)?.title ?? "Carregando...";
+@let author = (book | async)?.author ?? "Carregando...";
+@let genres = (book | async)?.genres ?? "Carregando...";
+@let price = (book | async)?.price ?? "Carregando...";
+@let pages = (book | async)?.pages ?? "Carregando...";
+@let quantity = (book | async)?.quantity ?? "Carregando...";
+@let year = (book | async)?.year ?? "Carregando...";
+@let avaliation = (book | async)?.avaliation ?? -1;
+
+<div class="main-container">
+  <mat-card class="card">
+
+    <mat-card-header>
+      <mat-card-title>{{title}}</mat-card-title>
+      <mat-card-subtitle>{{author}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <mat-list>
+        <mat-list-item>
+          @if (avaliation == -1)
+          {
+            Nota: Carregando...
+          }
+          @else
+          {
+            Nota: <app-stars [stars]="avaliation"></app-stars>
+          }
+        </mat-list-item>
+
+        <mat-list-item>
+          Generos: {{genres}}
+        </mat-list-item>
+
+        <mat-list-item>
+          Número de Páginas: {{pages}}
+        </mat-list-item>
+
+        <mat-list-item>
+          Preço: {{price}}
+        </mat-list-item>
+
+        <mat-list-item>
+          Quantidade em Estoque: {{quantity}}
+        </mat-list-item>
+
+        <mat-list-item>
+          Ano: {{year}}
+        </mat-list-item>
+      </mat-list>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

@@ -1,0 +1,12 @@
+.main-container {
+  display: flex;
+  margin-left: 20vw;
+  margin-top: 20vh;
+  width: 60vw;
+  height: 60vh;
+}
+
+.card {
+  width: 100%;
+  color: white;
+}
