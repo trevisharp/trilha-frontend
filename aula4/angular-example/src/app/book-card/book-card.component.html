@@ -1,0 +1,16 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{book.title}}</mat-panel-title>
+    <mat-panel-description>{{book.author}}</mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="book-detail">
+    <div>{{book.price}} R$</div>
+    <div>
+      <app-stars [stars]="book.avaliation"></app-stars>
+    </div>
+    <div>
+      <a [href]="'/book/' + book.id">Ver mais...</a>
+    </div>
+  </div>
+</mat-expansion-panel>

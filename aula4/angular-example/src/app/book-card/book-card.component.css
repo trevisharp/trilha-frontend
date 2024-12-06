@@ -1,0 +1,10 @@
+.book-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+a {
+  color: white;
+}

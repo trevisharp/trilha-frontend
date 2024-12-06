@@ -69,7 +69,7 @@ for (let i = 0; i < 1000; i++) {
     let adj = adjetivos[rand(adjetivos.length)];
     adj = adj.replace("X", sta.toLowerCase());
     let genIndex1 = rand(generos.length);
-    let genIndex2 = (genIndex1 + rand(generos.length)) % generos.length;
+    let genIndex2 = (genIndex1 + rand(generos.length - 1)) % generos.length;
     books.push({
         id: i + 1,
         title: sta + " " + adj + " " + con + " " + pro,

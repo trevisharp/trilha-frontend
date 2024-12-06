@@ -1,1 +1,30 @@
-<p>books-page works!</p>
+<div class="main-container">
+
+  <h1>Busque por seus livros favoritos:</h1>
+
+  <div class="searchbar">
+    <mat-form-field class="form-field">
+      <mat-label>Pesquisar</mat-label>
+      <input matInput type="text" [(ngModel)]="query" (input)="onQueryChange()">
+      @if (query) {
+        <button matSuffix mat-icon-button (click)="setQuery('')">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  @for (book of (books | async)?.books; track book.id)
+  {
+    <app-book-card [book]="book"></app-book-card>
+    <mat-divider></mat-divider>
+  }
+
+  <mat-paginator
+    [pageIndex]="page" [length]="(books | async)?.total" [pageSize]="limit"
+    [pageSizeOptions]="[10, 50, 100]" (page)="handlePage($event)"
+  ></mat-paginator>
+
+</div>
