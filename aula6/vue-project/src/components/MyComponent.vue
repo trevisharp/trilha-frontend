@@ -1,13 +1,11 @@
 <script setup lang="ts">
-const props = defineProps([ 'text' ]);
+const props = defineProps([ 'onSend' ])
+const model = defineModel();
 </script>
 
 <template>
-    <marquee>
-        <h1>
-            {{ text }}
-        </h1>
-    </marquee>
+    <input v-model="model">
+    <button @click="$emit(onSend, { })">Send Data!</button>
 </template>
 
 <style scoped>
